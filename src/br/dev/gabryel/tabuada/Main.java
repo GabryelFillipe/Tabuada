@@ -12,7 +12,7 @@ public class Main {
 		TelaTabuada tela = new TelaTabuada();
 		tela.criarTela("Tabuada DS1MA");
 		
-		// Brincando com vetores
+		// Testando vetores
 		/*
 		double[] notas = new double[5];
 		notas[0] = 7.0;

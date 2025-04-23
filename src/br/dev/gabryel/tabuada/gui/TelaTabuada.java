@@ -77,7 +77,6 @@ public class TelaTabuada {
 		// Criar o JList a tela
 
 		listTabuada = new JList();
-		
 
 		// Criar o JScrollPane
 		scrollTabuada = new JScrollPane(listTabuada);
@@ -103,34 +102,34 @@ public class TelaTabuada {
 				String multiplicando = textMultiplicando.getText();
 				String min = textMinMultiplicador.getText();
 				String max = textMaxMultiplicador.getText();
-				
+
 				// Convertendo os valores de String para double
 				double multiplicandoDouble = Double.parseDouble(multiplicando);
 				double minMultiplicadorDouble = Double.parseDouble(min);
 				double maxMultiplicadorDouble = Double.parseDouble(max);
-				
+
 				Tabuada tabuada = new Tabuada();
 				tabuada.setMultiplicando(multiplicandoDouble);
 				tabuada.setMinimoMultiplicador(minMultiplicadorDouble);
 				tabuada.setMaximoMultiplicador(maxMultiplicadorDouble);
-				
+
 				String[] tabuadaResult = tabuada.mostrarTabuada();
-				
+
 				listTabuada.setListData(tabuadaResult);
-				
+
 			}
 
 		});
-		
+
 		buttonLimpar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				textMultiplicando.setText(null);
 				textMinMultiplicador.setText(null);
 				textMaxMultiplicador.setText(null);
-				
-				
+				listTabuada.setListData(new String[0]);
+				textMultiplicando.requestFocus();
 			}
 		});
 
